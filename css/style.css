@@ -10,7 +10,8 @@ body {
   width:100%;
     /* feel free to change height */
     height: 4000px;
-    background: linear-gradient(  to bottom,  lime, darkblue );      
+    /* background: linear-gradient(  to bottom,  lime, darkblue );       */
+    background-color: white;
     overflow-y: scroll;
     scroll-behavior: smooth;    
   }
@@ -86,16 +87,16 @@ body {
 
 
   .left {
-    top:2%;
-    left:2%;
+    top:15%;
+    left:10%;
      width:30px;
      height:30px;
      background-color:red;
   }
 
   .right {
-    top:6%;
-    right:8%;
+    top:20%;
+    right:10%;
      width:30px;
      height:30px;
      background-color:yellow;
