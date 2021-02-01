@@ -71,7 +71,7 @@ function animateSvg(event){
     ],
   };  
 
-  if (event.preventDefault) { ()=>  event.preventDefault() }
+  // if (event.preventDefault) { ()=>  event.preventDefault() }
 
    
   LottieInteractivity.create(lot);
@@ -90,7 +90,7 @@ function init(){
 
   window.onmousewheel = cont.onmousewheel = wheel;
  
-  window.addEventListener("scroll", animateSvg, false);
+  window.addEventListener("scroll", animateSvg, {passive: true});
 
 }
 
