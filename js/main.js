@@ -84,7 +84,7 @@ function init(){
  
   if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
 
-  window.addEventListener("touchmove", wheel, false);
+  // window.addEventListener("touchend", wheel, {passive: true});
 
   window.onmousewheel = cont.onmousewheel = wheel;
  
