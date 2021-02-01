@@ -5,8 +5,12 @@ function wheelSmartphone(){
   console.log(document.querySelector('.palla').getBoundingClientRect());
   console.log(markerPositionY);
   console.log(markerPositionBottom);
-  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));}
-  else { [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  }    
+  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { 
+    [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
+  }
+  else {
+     [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  
+    }    
 }
 
 function wheel(event) {
@@ -16,8 +20,12 @@ function wheel(event) {
   console.log(document.querySelector('.palla').getBoundingClientRect());
   console.log(markerPositionY);
   console.log(markerPositionBottom);
-  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));}
-  else { [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  }
+  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) {
+     [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
+    }
+  else {
+     [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  
+    }
 
     var delta = 0;
     // console.log("EVENT", event);
