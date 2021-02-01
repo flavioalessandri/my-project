@@ -3,6 +3,7 @@ function wheel(event) {
   var popups = document.querySelectorAll('div.popup');
 
   var markerPosition = document.querySelector('.palla').getBoundingClientRect().y;
+  console.log(markerPosition);
   if(markerPosition>-2000)  [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
   else [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  
 

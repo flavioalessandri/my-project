@@ -88,7 +88,7 @@ body {
 
   .left {
     top:15%;
-    left:10%;
+    left:40%;
      width:30px;
      height:30px;
      background-color:red;
@@ -96,7 +96,7 @@ body {
 
   .right {
     top:20%;
-    right:10%;
+    right:30%;
      width:30px;
      height:30px;
      background-color:yellow;
