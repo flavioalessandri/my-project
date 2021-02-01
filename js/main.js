@@ -84,9 +84,11 @@ function init(){
  
   if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
 
+  window.addEventListener("touchend", wheel, {passive: false});
+
   window.onmousewheel = cont.onmousewheel = wheel;
  
-  window.addEventListener("scroll", animateSvg);
+  window.addEventListener("scroll", animateSvg, {passive: false});
 
 }
 

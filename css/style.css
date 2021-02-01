@@ -11,7 +11,7 @@ body {
     /* feel free to change height */
     height: 4000px;
     /* background: linear-gradient(  to bottom,  lime, darkblue );       */
-    background-color: white;
+    background-color: lightgrey;
     overflow-y: scroll;
     scroll-behavior: smooth;    
   }
