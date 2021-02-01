@@ -84,7 +84,7 @@ function animateSvg(event){
       {
         visibility: [0.1,1],
         type: 'seek',
-        frames: [0, 50],
+        frames: [0, 100],
       }
     ],
   };  
