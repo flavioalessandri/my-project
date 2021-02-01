@@ -2,9 +2,12 @@
 function wheel(event) {
   var popups = document.querySelectorAll('div.popup');
 
-  var markerPosition = document.querySelector('.palla').getBoundingClientRect().y;
-  console.log(markerPosition);
-  if(markerPosition>-2000)  [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
+  var markerPositionY = document.querySelector('.palla').getBoundingClientRect().y;
+  var markerPositionBottom = document.querySelector('.palla').getBoundingClientRect().y;
+  console.log(document.querySelector('.palla').getBoundingClientRect());
+  console.log(markerPositionY);
+  console.log(markerPositionBottom);
+  if(markerPositionY >-2000 || markerPositionBottom >-2000 )  [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
   else [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  
 
     var delta = 0;
@@ -13,14 +16,14 @@ function wheel(event) {
     {
       delta = event.wheelDelta / 120; //metodo che utilizza DOMMouseScroll su browser CHROME
     // console.log("DELTA CON WHEELDELTA", event.wheelDelta);
-      console.log("WHEEL DELTA", event.wheelDelta);
+      // console.log("WHEEL DELTA", event.wheelDelta);
     }
       // console.log("DELTA", delta);    
     else if (event.detail) 
     {
       delta = -event.detail / 3; //metodo che utilizza DOMMouseScroll su browser MOZILLA
       // console.log("event.detail", event.detail);}
-      console.log("event.detail ", event.detail );
+      // console.log("event.detail ", event.detail );
       // console.log("event.wheelDelta", event.wheelDelta);
       // console.log("DELTA",delta);
 
