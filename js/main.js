@@ -1,14 +1,23 @@
-
-function wheel(event) {
+function wheelSmartphone(){
   var popups = document.querySelectorAll('div.popup');
-
   var markerPositionY = document.querySelector('.palla').getBoundingClientRect().y;
   var markerPositionBottom = document.querySelector('.palla').getBoundingClientRect().y;
   console.log(document.querySelector('.palla').getBoundingClientRect());
   console.log(markerPositionY);
   console.log(markerPositionBottom);
-  if(markerPositionY >-2000 || markerPositionBottom >-2000 )  [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
-  else [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  
+  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));}
+  else { [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  }    
+}
+
+function wheel(event) {
+  var popups = document.querySelectorAll('div.popup');
+  var markerPositionY = document.querySelector('.palla').getBoundingClientRect().y;
+  var markerPositionBottom = document.querySelector('.palla').getBoundingClientRect().y;
+  console.log(document.querySelector('.palla').getBoundingClientRect());
+  console.log(markerPositionY);
+  console.log(markerPositionBottom);
+  if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));}
+  else { [].forEach.call(popups, (popup) => popup.classList.add('fadeIn'));  }
 
     var delta = 0;
     // console.log("EVENT", event);
@@ -49,6 +58,7 @@ function handle(delta) {
 
 
 }
+
 
 function animateSvg(event){
 
@@ -107,7 +117,7 @@ try {
   if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
 
   // window.addEventListener("touchend", wheel, {passive: true});
-  window.addEventListener('touchstart', wheel, supportsPassive ? { passive: true } : false);
+  window.addEventListener('touchstart', wheelSmartphone, supportsPassive ? { passive: true } : false);
 
   window.onmousewheel = cont.onmousewheel = wheel;
  
