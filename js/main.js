@@ -50,7 +50,7 @@ function handle(delta) {
 
 }
 
-function animateSvg(){
+function animateSvg(event){
 
   var lot = {
     mode: 'scroll',
@@ -70,6 +70,8 @@ function animateSvg(){
       }
     ],
   };  
+
+  if (event.preventDefault) { ()=>  event.preventDefault() }
 
    
   LottieInteractivity.create(lot);
