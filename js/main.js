@@ -71,6 +71,8 @@ function animateSvg(event){
     ],
   };  
 
+  // wheel(event);
+
   // if (event.preventDefault) { ()=>  event.preventDefault() }
 
    
@@ -81,16 +83,35 @@ function animateSvg(event){
 
 
 function init(){
-
+  
   var cont = document.documentElement;
+
+//-------------------------------------------------------------------------------------------------
+  // Test via a getter in the options object to see if the passive property is accessed
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+// Use our detect's results. passive applied if supported, capture will be false either way.
+// elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false);
+//-------------------------------------------------------------------------------------------------
+
  
   if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
 
   // window.addEventListener("touchend", wheel, {passive: true});
+  window.addEventListener('touchstart', wheel, supportsPassive ? { passive: true } : false);
 
   window.onmousewheel = cont.onmousewheel = wheel;
  
-  window.addEventListener("scroll", animateSvg, {passive: true});
+  window.addEventListener("scroll", animateSvg);
 
 }
 
