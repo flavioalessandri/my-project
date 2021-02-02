@@ -52,9 +52,9 @@ body {
   }
 
    #myContainerId{
-     margin:0 auto;
-     width: 350px;
-     height: auto;
+    margin: 0 auto;
+    max-width: 300px;
+    height: 100%;
   }
 
   #firstLottie{
