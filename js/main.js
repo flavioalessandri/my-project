@@ -5,13 +5,10 @@ function addListenerMulti(element, eventNames, listener) {
   }
 }
 
-function wheelSmartphone(){
+function wheelSmartphone(ev){
   var popups = document.querySelectorAll('div.popup');
   var markerPositionY = document.querySelector('.marker').getBoundingClientRect().y;
-  var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;
-
-  console.log(markerPositionY);
-  console.log(markerPositionBottom);
+  var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;  
   if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { 
     [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
   }
@@ -33,15 +30,17 @@ function wheel(event) {
     }
 
     var delta = 0;
+    //console.log("EVENT",event,markerPositionY,markerPositionBottom);
     if (event.wheelDelta) 
     {
       delta = event.wheelDelta / 120; //metodo che utilizza DOMMouseScroll su browser CHROME
+      //console.log("DELTACROME",delta);
     }
  
     else if (event.detail) 
     {
       delta = -event.detail / 3; //metodo che utilizza DOMMouseScroll su browser MOZILLA
-
+      
 
     }
       handle(delta); 
@@ -52,8 +51,7 @@ function wheel(event) {
 }
 
 function handle(delta) {
-
- 
+  
     var time = 1000;
     var distance =950;   
 
@@ -72,6 +70,7 @@ function mobileChk(){
 
 
 function animateSvg(event){
+  //console.log("animatesvg");
 
   var rotate = document.querySelector('.rotate'); 
  rotate.classList.add('rotation');
@@ -116,7 +115,7 @@ function init(){
       get: function() {
         supportsPassive = true;
       }
-    });
+    });    
     window.addEventListener("testPassive", null, opts);
     window.removeEventListener("testPassive", null, opts);
   } catch (e) {}  
@@ -125,12 +124,12 @@ function init(){
 //verifica se si sta navigando su mobile o su desktop 
 if(mobileChk()===false){ //------------------------------se Desktop
 
-  window.addEventListener('DOMMouseScroll', wheel, supportsPassive ? { passive: true } : false);
+  window.addEventListener('DOMMouseScroll', wheel, supportsPassive ? true : false);
   window.addEventListener("scroll", animateSvg);
   
   
 }else{   //----------------------------------------------se Mobile
-  window.addEventListener('touchstart', wheelSmartphone, supportsPassive ? { passive: true } : false);
+  window.addEventListener('touchstart', wheelSmartphone, supportsPassive ? true : false);
   window.addEventListener("scroll", animateSvg);
 } 
 
