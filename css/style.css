@@ -116,7 +116,7 @@ body {
   }
 
   .rotation{
-    animation: rotate 1.5s ease-in;
+    animation: rotate .7s ease-in;
     animation-iteration-count: 1;
   }
 

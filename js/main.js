@@ -86,9 +86,11 @@ function handle(delta) {
 function animateSvg(event){
 
   var rotate = document.querySelector('.rotate'); 
- var degree = Math.round(Math.sin(10000/window.scrollY)*120);
+//  var degree = Math.round(Math.sin(10000/window.scrollY)*120);
+ rotate.classList.add('rotation');
+  setTimeout (() => {rotate.classList.remove('rotation')},1000)
 
- rotate.style.transform = `rotate(${degree}deg)`;
+//  rotate.style.transform = `rotate(${degree}deg)`;
 
   var lot = {
     mode: 'scroll',
@@ -102,9 +104,14 @@ function animateSvg(event){
         frames: [0],
       },
       {
-        visibility: [0.1,1],
+        visibility: [0.1,.9],
         type: 'seek',
         frames: [0, 100],
+      },
+      {
+        visibility: [.9,1],
+        type: 'stop',
+        frames: [100],
       }
     ],
   };  
