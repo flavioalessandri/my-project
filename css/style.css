@@ -3,8 +3,10 @@
   margin:0;
   box-sizing: border-box;
 }
+html { overflow-x: hidden; overflow-y: hidden; height: 100%; }
 
 body {
+  overflow: hidden; 
   width:100%;
     /* feel free to change height */
     height: 100%;
