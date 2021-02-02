@@ -11,7 +11,8 @@ body {
     /* background: linear-gradient(  to bottom,  lime, darkblue );       */
     background-color: lightgrey;
     /* overflow-y: scroll; */
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth;
+    overscroll-behavior:none;    
   }
 
   main{
@@ -112,4 +113,17 @@ body {
     left: 0;
     height: 95vh;
     margin-bottom:5vh;
+  }
+
+  .rotation{
+    animation: rotate 1.5s ease-in;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes rotate{
+    0%,100%{transform: rotate(0deg);}
+    20%{transform: rotate(20deg);}
+    50%{transform: rotate(-2deg);}
+    40%,70%{transform: rotate(5deg);}
+    80%{transform: rotate(7deg);}
   }

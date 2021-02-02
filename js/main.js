@@ -1,8 +1,23 @@
+function addListenerMulti(element, eventNames, listener) {
+  var events = eventNames.split(' ');
+  for (var i=0, iLen=events.length; i<iLen; i++) {
+  element.addEventListener(events[i], listener, false);
+  }
+}
+
+// function elementRotation(ev){
+//   var rotate = document.querySelector('.rotate');
+//   console.log("EV",ev);  
+//   rotate.classList.add('rotation');
+//   setTimeout (() => {rotate.classList.remove('rotation')},5000)
+// }
+
+
 function wheelSmartphone(){
   var popups = document.querySelectorAll('div.popup');
-  var markerPositionY = document.querySelector('.palla').getBoundingClientRect().y;
-  var markerPositionBottom = document.querySelector('.palla').getBoundingClientRect().y;
-  console.log(document.querySelector('.palla').getBoundingClientRect());
+  var markerPositionY = document.querySelector('.marker').getBoundingClientRect().y;
+  var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;
+  // console.log(document.querySelector('.marker').getBoundingClientRect());
   console.log(markerPositionY);
   console.log(markerPositionBottom);
   if(markerPositionY >-2000 || markerPositionBottom >-2000 ) { 
@@ -15,11 +30,11 @@ function wheelSmartphone(){
 
 function wheel(event) {
   var popups = document.querySelectorAll('div.popup');
-  var markerPositionY = document.querySelector('.palla').getBoundingClientRect().y;
-  var markerPositionBottom = document.querySelector('.palla').getBoundingClientRect().y;
-  console.log(document.querySelector('.palla').getBoundingClientRect());
-  console.log(markerPositionY);
-  console.log(markerPositionBottom);
+  var markerPositionY = document.querySelector('.marker').getBoundingClientRect().y;
+  var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;
+  // console.log(document.querySelector('.marker').getBoundingClientRect());
+  // console.log(markerPositionY);
+  // console.log(markerPositionBottom);
   if(markerPositionY >-2000 || markerPositionBottom >-2000 ) {
      [].forEach.call(popups, (popup) => popup.classList.remove('fadeIn'));
     }
@@ -70,6 +85,11 @@ function handle(delta) {
 
 function animateSvg(event){
 
+  var rotate = document.querySelector('.rotate'); 
+ var degree = Math.round(Math.sin(10000/window.scrollY)*120);
+
+ rotate.style.transform = `rotate(${degree}deg)`;
+
   var lot = {
     mode: 'scroll',
     player: '#firstLottie',
@@ -89,6 +109,11 @@ function animateSvg(event){
     ],
   };  
 
+ 
+  
+
+  
+
   // wheel(event);
 
   // if (event.preventDefault) { ()=>  event.preventDefault() }
@@ -101,25 +126,28 @@ function animateSvg(event){
 
 
 function init(){
+
   
   var cont = document.documentElement;
-
-//-------------------------------------------------------------------------------------------------
+  
+  //-------------------------------------------------------------------------------------------------
   // Test via a getter in the options object to see if the passive property is accessed
-var supportsPassive = false;
-try {
-  var opts = Object.defineProperty({}, 'passive', {
-    get: function() {
-      supportsPassive = true;
-    }
-  });
-  window.addEventListener("testPassive", null, opts);
-  window.removeEventListener("testPassive", null, opts);
-} catch (e) {}
-
-// Use our detect's results. passive applied if supported, capture will be false either way.
-// elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false);
-//-------------------------------------------------------------------------------------------------
+  var supportsPassive = false;
+  try {
+    var opts = Object.defineProperty({}, 'passive', {
+      get: function() {
+        supportsPassive = true;
+      }
+    });
+    window.addEventListener("testPassive", null, opts);
+    window.removeEventListener("testPassive", null, opts);
+  } catch (e) {}
+  
+  // Use our detect's results. passive applied if supported, capture will be false either way.
+  // elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false);
+  //-------------------------------------------------------------------------------------------------
+  
+  
 
  
   if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
