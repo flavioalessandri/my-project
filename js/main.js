@@ -125,7 +125,7 @@ function init(){
 //verifica se si sta navigando su mobile o su desktop 
 if(mobileChk()===false){ //------------------------------se Desktop
 
-  window.addEventListener('DOMMouseScroll', wheel, false);
+  window.addEventListener('DOMMouseScroll', wheel, supportsPassive ? { passive: true } : false);
   window.addEventListener("scroll", animateSvg);
   
   
