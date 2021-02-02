@@ -106,12 +106,12 @@ function animateSvg(event){
       {
         visibility: [0.1,.9],
         type: 'seek',
-        frames: [0, 100],
+        frames: [0, 129],
       },
       {
         visibility: [.9,1],
         type: 'stop',
-        frames: [100],
+        frames: [130],
       }
     ],
   };  
