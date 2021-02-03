@@ -17,9 +17,13 @@ body {
     overscroll-behavior:none;    
   }
 
+  /* html, body { overflow: hidden; height: 100% } */
+
   main{
     width:100%;
-    height:8000px;
+    height:6000px;   
+    scroll-behavior: smooth;
+    overscroll-behavior:none;   
   }
 
   footer{
@@ -31,7 +35,7 @@ body {
   }
 
   section#graphic {
-    width: 100vw;
+    /* width: 100vw; */
     position: fixed;
     top: 0;
     left: 0;
@@ -42,45 +46,57 @@ body {
   #myContainerId{
     margin: 0 auto;  
     height: 50%;
-    position: absolute;
+    position: relative;
     top: 50vh;
     left: 50vw;
     transform: translate(-50%,-50%);
   }
 
   #animation{
+    position:relative;
     margin:auto;
-    width:100%; 
+    width:300px; 
     height:100%;
+  }
+
+  #leaves-ref{
+    width: 3px;
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(50%);
+    /* background-color: red; */
   }
 
   
   #leaf{    
-    max-width:40px;
-    max-height:40px;
+    height:6%;
+    /* max-width:30px;
+    height:auto; */
+    /* height:20%; */
     /* height:60px; */
     position:absolute;
     top:60%;
-    left:44%;
-    transform: translate(-50%,-50%) ;
+    right: 1px;
+    /* transform: translate(-50%,-50%) ; */
     transform-origin: 150% 0px;
   }
 
 
-  #leaf2{   
-    
-    max-width:40px;
-    max-height:40px;
+  #leaf2{       
+    height:6%;
+    /* height:auto; */
+    /* height:20%; */
     position:absolute;
     top:50%;
-    left:63%;
-    transform: translate(-50%,-50%) ;
+    left:4px;
+    /* transform: translate(-50%,-50%) ; */
     transform-origin: 0% 0px;
     animation-delay: 0.1s;
     -webkit-animation-delay: 0.1s ;
   }
 
-  
+   
   h1 {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
@@ -112,8 +128,8 @@ body {
   }
 
   @keyframes bouncing {
-    0%,100%{opacity:0;margin-top:0;}
-    60%{opacity:.9;margin-top:18px;}   
+    0%,100%{opacity:0;margin-top:0;transform: translateX(0) ;}
+    60%{opacity:.9;margin-top:18px;transform: translateX(30%);}   
   }
 
   @-webkit-keyframes bouncing {
@@ -123,27 +139,29 @@ body {
 
   .left {
     border-radius: 50%;
-    top:15%;
-    left:40%;
+    top:0%;
+    left:40px;
     width:30px;
     height:30px;
     background:rbga(255,0,0,.8);
-    -webkit-box-shadow:0 0 20px red; 
-    -moz-box-shadow: 0 0 20px red; 
-    box-shadow:0 0 20px red;
+    -webkit-box-shadow:0 0 20px #f94144; 
+    -moz-box-shadow: 0 0 20px #f94144; 
+    box-shadow:0 0 20px #f94144;
+    animation-delay: .3s;
+    -webkit-animation-delay: .3s;
   }
   
 
   .right {
     border-radius: 50%;
     top:20%;
-    right:30%;
-     width:30px;
-     height:30px;
+    right:60px;
+     width:20px;
+     height:20px;
      background-color:yellow;
-     -webkit-box-shadow:0 0 20px yellow; 
-     -moz-box-shadow: 0 0 20px yellow; 
-     box-shadow:0 0 20px yellow;
+     -webkit-box-shadow:0 0 20px  #fee440; 
+     -moz-box-shadow: 0 0 20px  #fee440; 
+     box-shadow:0 0 20px #fee440;
   }
 
   
@@ -153,7 +171,7 @@ body {
   }
   
   
-  @keyframes rotate{
+  /* @keyframes rotate{
     0%,100%{transform: translate(-50%,-50%) rotate(0deg);}
     20%{transform: translate(-50%,-50%) rotate(20deg);}
     50%{transform: translate(-50%,-50%) rotate(-2deg);}
@@ -168,4 +186,22 @@ body {
     50%{transform: translate(-50%,-50%) rotate(-2deg);}
     40%,70%{transform:translate(-50%,-50%)  rotate(5deg);}
     80%{transform: translate(-50%,-50%) rotate(7deg);}
+  } */
+
+
+  @keyframes rotate{
+    0%,100%{transform:  rotate(0deg);}
+    20%{transform: rotate(20deg);}
+    50%{transform:  rotate(-2deg);}
+    40%,70%{transform:  rotate(5deg);}
+    80%{transform: rotate(7deg);}
+  }
+  
+  
+  @-webkit-keyframes rotate{
+    0%,100%{transform: rotate(0deg);}
+    20%{transform:  rotate(20deg);}
+    50%{transform: rotate(-2deg);}
+    40%,70%{transform:  rotate(5deg);}
+    80%{transform:  rotate(7deg);}
   }

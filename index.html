@@ -9,26 +9,41 @@
         integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
         crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>My Personal Portfolio</title>
 </head>
 
 <body>
+    <div class="wrapper" style="overflow: auto; height: 100%;">
     <main>
 
         <section id="graphic">
 
 
             <div id="myContainerId" class="cont">
+
+                <div id="leaves-ref">
+                    <div class="popup right" style=" position:fixed;"></div>
+                   <div class="popup left" style=" position:fixed;"></div>
+                    <svg id="leaf" class="rotate popup" data-name="Layer 1" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 39.93 20.44"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" d="M24.5,12.72C21.2,8.65,12.35,8.23,9,11.53c-3.7,3.67-4.36,13.39-8,15.68s8.58,4.06,16.23.65C24.23,24.79,28,17.09,24.5,12.72Z" transform="translate(-0.44 -9.33)"/><path class="cls-2" d="M24.35,14s1.8-3.78,8.43-2.55a7.74,7.74,0,0,1,6.59,6.4" transform="translate(-0.44 -9.33)"/></svg>
+                    
+                    <svg id="leaf2" class="rotate popup" data-name="Layer 2" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 40.46 19"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:3px;}</style></defs><path class="cls-1" d="M16,14.37C20.68,8.93,34,28.93,38.83,30.18c3.32.86-5.07,4.32-14.36.49C16.07,27.21,11.89,19.19,16,14.37Z" transform="translate(0.89 -13.43)"/><path class="cls-2" d="M19.65,18.87S3.62,9.76.56,21.49" transform="translate(0.89 -13.43)"/></svg>
+                    
+                   
+                    </div>
+
                 <!-- <div class="rotate"
                     style=" position:fixed; width:30px;height:50px;background-color: blue;top:40%;left:40%"></div> -->
-                <div class="popup left" style=" position:fixed;"></div>
-                <div class="popup right" style=" position:fixed;"></div>
-
-                <svg id="leaf" class="rotate popup" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.93 20.44"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" d="M24.5,12.72C21.2,8.65,12.35,8.23,9,11.53c-3.7,3.67-4.36,13.39-8,15.68s8.58,4.06,16.23.65C24.23,24.79,28,17.09,24.5,12.72Z" transform="translate(-0.44 -9.33)"/><path class="cls-2" d="M24.35,14s1.8-3.78,8.43-2.55a7.74,7.74,0,0,1,6.59,6.4" transform="translate(-0.44 -9.33)"/></svg>
-
-                <svg id="leaf2" class="rotate popup" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.46 19"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:3px;}</style></defs><path class="cls-1" d="M16,14.37C20.68,8.93,34,28.93,38.83,30.18c3.32.86-5.07,4.32-14.36.49C16.07,27.21,11.89,19.19,16,14.37Z" transform="translate(0.89 -13.43)"/><path class="cls-2" d="M19.65,18.87S3.62,9.76.56,21.49" transform="translate(0.89 -13.43)"/></svg>
-                
-                <div id="animation"></div>
+                    
+                    
+                    
+                    
+                    <div id="animation"> </div>
             </div>
 
         </section>
@@ -53,6 +68,8 @@
         </div>
     </main> -->
     <footer>FOOTER</footer>
+
+</div>
 
 
     <!-- <div id="lineAnim"></div> -->
