@@ -10,7 +10,7 @@ body {
   width:100%;
     /* feel free to change height */
     height: 100%;
-    /* background: linear-gradient(  to bottom,  lime, darkblue );       */
+    background: linear-gradient(  to bottom,  white, black );      
     background-color: white;
     /* overflow-y: scroll; */
     scroll-behavior: smooth;
@@ -22,10 +22,6 @@ body {
     height:8000px;
   }
 
-  section#graphic{
-    width:100%;
-  }
-
   footer{
     width:100%;
     height:5vh;
@@ -33,6 +29,56 @@ body {
     position:fixed;
     bottom:0;
   }
+
+  section#graphic {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    margin-top:auto;
+  }
+
+  #myContainerId{
+    margin: 0 auto;  
+    height: 50%;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+  }
+
+  #animation{
+    margin:auto;
+    width:100%; 
+    height:100%;
+  }
+
+  
+  #leaf{    
+    width:18%;
+    /* height:60px; */
+    position:absolute;
+    top:60%;
+    left:44%;
+    transform: translate(-50%,-50%) ;
+    transform-origin: 150% 0px;
+  }
+
+
+  #leaf2{   
+    
+    width:20%;
+    /* height:60px; */
+    position:absolute;
+    top:50%;
+    left:63%;
+    transform: translate(-50%,-50%) ;
+    transform-origin: 0% 0px;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s ;
+  }
+
   
   h1 {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -47,21 +93,11 @@ body {
     text-shadow: 1px 1px 1px #333;
   }  
   
-  svg{
+  /* svg{
     background: none;
-  }
+  } */
 
-   #myContainerId{
-    margin: 0 auto;
-    max-width: 300px;
-    height: 100%;
-  }
 
-  #firstLottie{
-    margin:auto auto;
-    width:100%; 
-    height:100%;
-  }
 
    .popup{
     opacity:0;    
@@ -71,6 +107,7 @@ body {
   .fadeIn{       
     transition: all 1s;
     animation: bouncing 4s infinite;
+    -webkit-animation: bouncing 4s infinite; 
   }
 
   @keyframes bouncing {
@@ -108,24 +145,26 @@ body {
      box-shadow:0 0 20px yellow;
   }
 
-  section#graphic {
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    margin-top:auto;
-  }
-
+  
   .rotation{
-    animation: rotate .7s ease-in;
-    animation-iteration-count: 1;
+    animation: rotate .7s ease-in 1;
+    -webkit-animation: rotate .7s ease-in 1;   
   }
-
+  
+  
   @keyframes rotate{
-    0%,100%{transform: rotate(0deg);}
-    20%{transform: rotate(20deg);}
-    50%{transform: rotate(-2deg);}
-    40%,70%{transform: rotate(5deg);}
-    80%{transform: rotate(7deg);}
+    0%,100%{transform: translate(-50%,-50%) rotate(0deg);}
+    20%{transform: translate(-50%,-50%) rotate(20deg);}
+    50%{transform: translate(-50%,-50%) rotate(-2deg);}
+    40%,70%{transform:translate(-50%,-50%)  rotate(5deg);}
+    80%{transform: translate(-50%,-50%) rotate(7deg);}
+  }
+  
+  
+  @-webkit-keyframes rotate{
+    0%,100%{transform: translate(-50%,-50%) rotate(0deg);}
+    20%{transform: translate(-50%,-50%) rotate(20deg);}
+    50%{transform: translate(-50%,-50%) rotate(-2deg);}
+    40%,70%{transform:translate(-50%,-50%)  rotate(5deg);}
+    80%{transform: translate(-50%,-50%) rotate(7deg);}
   }

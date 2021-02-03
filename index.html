@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+        integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+        crossorigin="anonymous"></script>
+
     <title>My Personal Portfolio</title>
 </head>
+
 <body>
     <main>
 
         <section id="graphic">
-            
-            
-            <div id="myContainerId" class="cont" >
-                <div class="rotate" style=" position:fixed; width:30px;height:50px;background-color: blue;top:40%;left:40%"></div>
+
+
+            <div id="myContainerId" class="cont">
+                <!-- <div class="rotate"
+                    style=" position:fixed; width:30px;height:50px;background-color: blue;top:40%;left:40%"></div> -->
                 <div class="popup left" style=" position:fixed;"></div>
                 <div class="popup right" style=" position:fixed;"></div>
-                <lottie-player id="firstLottie" src="src/data.json" ></lottie-player>
+
+                <svg id="leaf" class="rotate popup" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.93 20.44"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" d="M24.5,12.72C21.2,8.65,12.35,8.23,9,11.53c-3.7,3.67-4.36,13.39-8,15.68s8.58,4.06,16.23.65C24.23,24.79,28,17.09,24.5,12.72Z" transform="translate(-0.44 -9.33)"/><path class="cls-2" d="M24.35,14s1.8-3.78,8.43-2.55a7.74,7.74,0,0,1,6.59,6.4" transform="translate(-0.44 -9.33)"/></svg>
+
+                <svg id="leaf2" class="rotate popup" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.46 19"><defs><style>.cls-1{fill:#606060;}.cls-2{fill:none;stroke:#606060;stroke-miterlimit:10;stroke-width:3px;}</style></defs><path class="cls-1" d="M16,14.37C20.68,8.93,34,28.93,38.83,30.18c3.32.86-5.07,4.32-14.36.49C16.07,27.21,11.89,19.19,16,14.37Z" transform="translate(0.89 -13.43)"/><path class="cls-2" d="M19.65,18.87S3.62,9.76.56,21.49" transform="translate(0.89 -13.43)"/></svg>
+
+
+               
+                <div id="animation"></div>
             </div>
-            
+
         </section>
-        
+
         <div class="marker" style="position:relative;top:50vh;left:50vw;width:100px;height:100px;"></div>
 
     </main>
 
 
 
-    
+
     <!-- <main>
         <div id="cont" class="container">
                   
@@ -44,19 +56,17 @@
     </main> -->
     <footer>FOOTER</footer>
 
-    
+
     <!-- <div id="lineAnim"></div> -->
     <script src="./js/lottie.js" type="application/javascript"></script>
 
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-        
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    
-   
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="./js/main.js" type="application/javascript"></script>
     <!-- <script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script> -->
 </body>
-</html>
 
+</html>

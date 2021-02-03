@@ -5,7 +5,7 @@ function addListenerMulti(element, eventNames, listener) {
   }
 }
 
-function wheelSmartphone(ev){  
+function wheelSmartphone(ev){
   var popups = document.querySelectorAll('div.popup');
   var markerPositionY = document.querySelector('.marker').getBoundingClientRect().y;
   var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;  
@@ -17,7 +17,7 @@ function wheelSmartphone(ev){
     }    
 }
 
-function wheel(event) {  
+function wheel(event) {
   var popups = document.querySelectorAll('div.popup');
   var markerPositionY = document.querySelector('.marker').getBoundingClientRect().y;
   var markerPositionBottom = document.querySelector('.marker').getBoundingClientRect().y;
@@ -30,21 +30,36 @@ function wheel(event) {
     }
 
     var delta = 0;
-    if (event.wheelDelta) { delta = event.wheelDelta / 120;} //metodo che utilizza DOMMouseScroll su browser CHROME
-    else if (event.detail)  { delta = -event.detail / 3;  }//metodo che utilizza DOMMouseScroll su browser MOZILLA
-  
-    handle(delta); 
+    //console.log("EVENT",event,markerPositionY,markerPositionBottom);
+    if (event.wheelDelta) 
+    {
+      delta = event.wheelDelta / 120; //metodo che utilizza DOMMouseScroll su browser CHROME
+      //console.log("DELTACROME",delta);
+    }
+ 
+    else if (event.detail) 
+    {
+      delta = -event.detail / 3; //metodo che utilizza DOMMouseScroll su browser MOZILLA
+      
+
+    }
+      handle(delta); 
     
-    if (event.preventDefault) { ()=>  event.preventDefault() } //utilizzando questo sistema prevengo il comportamento di default del Browser   
+    if (event.preventDefault) { ()=>  event.preventDefault() } //utilizzando questo sistema prevengo il comportamento di default del Browser
+
+    
 }
 
-function handle(delta) {  
+function handle(delta) {
+  
     var time = 1000;
     var distance =950;   
 
     $(document.documentElement).stop().animate({
       scrollTop: $(window).scrollTop() - (distance * delta)
   }, time );
+
+
 }
 
 function mobileChk(){
@@ -53,38 +68,46 @@ function mobileChk(){
   return check;
 };
 
-function animateLeaves(elem){
-  
-  elem.forEach( rotating  => {
-    rotating.classList.add('rotation') 
-    setTimeout (() => {
-      rotating.classList.remove('rotation');
-    },1000);
 
-    setTimeout (() => {      
-      rotating.classList.remove('popup');    
-    },5000);
-      
+function animateSvg(event){
+  //console.log("animatesvg");
 
-  })
-//  rotate.classList.add('rotation');
-//   setTimeout (() => {rotate.classList.remove('rotation')},1000)
+  var rotate = document.querySelector('.rotate'); 
+ rotate.classList.add('rotation');
+  setTimeout (() => {rotate.classList.remove('rotation')},1000)
+
+
+  var lot = {
+    mode: 'scroll',
+    player: '#firstLottie',
+    container: document.documentElement,
+    // container: "#gap",
+    actions: [ 
+      {
+        visibility: [0,0.1],
+        type: 'stop',
+        frames: [0],
+      },
+      {
+        visibility: [0.1,.9],
+        type: 'seek',
+        frames: [0, 350],
+      },
+      {
+        visibility: [.9,1],
+        type: 'stop',
+        frames: [351],
+      }
+    ],
+  };  
+   
+  LottieInteractivity.create(lot);
+
 }
 
+
+
 function init(){
-
-  var rotate = document.querySelectorAll('.rotate');  
-
-  var animation = bodymovin.loadAnimation({
-    container : document.getElementById("animation"),
-    render: 'svg',
-    loop: false,
-    autoplay:false,
-    path: "./src/data.json"
-  });
-
-  $(window).scroll( () => { animation.play(); animateLeaves(rotate)});
-
   //-------------------------------------------------------------------------------------------------
   var supportsPassive = false;
   try {
@@ -100,13 +123,17 @@ function init(){
   
 //verifica se si sta navigando su mobile o su desktop 
 if(mobileChk()===false){ //------------------------------se Desktop
-  window.addEventListener('DOMMouseScroll', wheel, supportsPassive ? true : false);  
+
+  window.addEventListener('DOMMouseScroll', wheel, supportsPassive ? true : false);
+  window.addEventListener("scroll", animateSvg);
+  
+  
 }else{   //----------------------------------------------se Mobile
   window.addEventListener('touchstart', wheelSmartphone, supportsPassive ? true : false);
+  window.addEventListener("scroll", animateSvg);
 } 
 
 }
 
+
 $(document).ready(init);
-
-
