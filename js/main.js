@@ -54,6 +54,12 @@ function mobileChk(){
 };
 
 function animateLeaves(elem){
+
+  if(window.innerHeight<500){ elem.forEach( elemDim  => elemDim.style.width= "23px"); }
+
+  if(window.innerWidth>1000){ document.getElementById('leaf').style.left= "55%"; document.getElementById('leaf2').style.left= "45%" }
+
+  
   
   elem.forEach( rotating  => {
     rotating.classList.add('rotation') 
@@ -71,7 +77,9 @@ function animateLeaves(elem){
 //   setTimeout (() => {rotate.classList.remove('rotation')},1000)
 }
 
-function init(){
+function init(){ 
+
+
 
   var rotate = document.querySelectorAll('.rotate');  
 
